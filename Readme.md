@@ -1,15 +1,15 @@
 # Service Oriented Assignment
 Developed an Online Course Provider Service.
-This Project Contains three major service
-- Course
-- Reviews
-- Gateway
+- This Project Contains three major service
+  - Course
+  - Reviews
+  - Gateway
 
-* Course
+* **Course**:
     This service provides the course details.
-* Reviews
+* **Reviews**:
     This service handles crud operations of the reviews of a specific course.
-* Gateway
+* **Gateway**:
     This service is responsible for routing the request to appropriate service(course or reviews) based on the endpoint called.
 
 
