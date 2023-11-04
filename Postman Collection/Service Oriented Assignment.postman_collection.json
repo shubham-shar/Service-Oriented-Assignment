@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "551c47d4-2a7f-4f69-9a2b-79b9ee279311",
+		"name": "Service Oriented Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Get all Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{courses_host}}/courses?currency=INR",
+							"host": [
+								"{{courses_host}}"
+							],
+							"path": [
+								"courses"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "INR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course By Pricing Strategy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{courses_host}}/courses/strategy?currency=INR&type=FREE",
+							"host": [
+								"{{courses_host}}"
+							],
+							"path": [
+								"courses",
+								"strategy"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "INR"
+								},
+								{
+									"key": "type",
+									"value": "FREE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{courses_host}}/courses/101?currency=INR",
+							"host": [
+								"{{courses_host}}"
+							],
+							"path": [
+								"courses",
+								"101"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "INR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"AI and Big Data\",\n    \"description\": \"Become a Data scientist\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{courses_host}}/courses",
+							"host": [
+								"{{courses_host}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review Service",
+			"item": [
+				{
+					"name": "Reviews",
+					"item": [
+						{
+							"name": "Get Reviews by CourseId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{reviews_host}}/reviews/courses/1",
+									"host": [
+										"{{reviews_host}}"
+									],
+									"path": [
+										"reviews",
+										"courses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Review",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"Very Thorough study material\",\n    \"username\": \"Testing username\",\n    \"rating\": 4,\n    \"courseId\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{reviews_host}}/reviews/courses/3",
+									"host": [
+										"{{reviews_host}}"
+									],
+									"path": [
+										"reviews",
+										"courses",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Get comments by review Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{reviews_host}}/comments/reviews/1",
+									"host": [
+										"{{reviews_host}}"
+									],
+									"path": [
+										"comments",
+										"reviews",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add comment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"Thanks for the comment\",\n    \"username\": \"testingUser\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{reviews_host}}/comments/reviews/1",
+									"host": [
+										"{{reviews_host}}"
+									],
+									"path": [
+										"comments",
+										"reviews",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: Api-Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: Review-Service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/reviews/**
+        - id: Comments-Routes
+          uri: http://localhost:8081
+          predicates:
+            - Path=/comments/**
+        - id: Courses-Routes
+          uri: http://localhost:8080
+          predicates:
+            - Path=/courses/**
